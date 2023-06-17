@@ -1,10 +1,15 @@
-n = set(range(1,10000))
-a = set()
-for num in n:
-    for i in str(num):
-        num += int(i)
-    a.add(num)
+#implementation 1
 
-b = n - a
-for k in sorted(b):
-    print(k)
+# 33 + 3 + 3 = 39
+def f(n):
+  num = n + sum(map(int, str(n)))
+  return num
+
+x = set()
+
+for i in range(0, 10000):
+  x.add(f(i))
+
+for i in range(0, 10000):
+  if i not in x:
+    print(i)
